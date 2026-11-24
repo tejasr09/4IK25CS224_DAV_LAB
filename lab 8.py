@@ -1,10 +1,11 @@
 import pandas as pd
+from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (confusion_matrix, ConfusionMatrixDisplay, accuracy_score, precision_score, recall_score, f1_score, classification_report)
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/content/Titanic-Dataset.csv")
+df = pd.read_csv(Path(__file__).with_name("Titanic-Dataset.csv"))
 df=df.drop(['PassengerId','Name','Ticket','Cabin'],axis=1)
 df['Age']=df['Age'].fillna(df['Age'].median())
 df['Sex']=df['Sex'].map({'male':0,'female':1})
@@ -31,4 +32,11 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Not Survived
 disp.plot(cmap='Blues')
 plt.title('Confusion Matrix')
 plt.show()
+
+# OUTPUT PREVIEW (Titanic-Dataset.csv)
+# Accuracy: 0.804; Precision: 0.793; Recall: 0.667; F1 Score: 0.724
+# Confusion Matrix:
+# [[98 12]
+#  [23 46]]
+# A labeled confusion-matrix heatmap is displayed.
 

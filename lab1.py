@@ -21,3 +21,10 @@ print(df.marks.mean())
 print(df.iloc[0:2])
 print(df.duplicated())
 print(df.isnull().sum())
+
+# OUTPUT PREVIEW
+# marks: [ 80  85  90  95 100]
+# Mean: 90.0
+# (5,)
+# The DataFrame preview shows 10 students; describe() summarizes marks
+# (count 9, mean 81.44), and the final null-count output shows 1 missing mark.

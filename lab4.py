@@ -36,3 +36,10 @@ df["Extracurricular_Encoded"] = (
 output_path = Path(__file__).with_name("students_performance_cleaned.csv")
 df.to_csv(output_path, index=False)
 print(f"\nCleaned dataset saved as '{output_path.name}'")
+
+# OUTPUT PREVIEW
+# First 5 rows of dataset: a table of study hours, attendance, scores, and categories.
+# Missing values after imputation: 0 in each of the four score columns.
+# One-Hot Encoded Data: includes Parental_Education_Level_* columns.
+# Label Encoded Data: shows Pass/Fail beside integer category codes.
+# Cleaned dataset saved as 'students_performance_cleaned.csv'

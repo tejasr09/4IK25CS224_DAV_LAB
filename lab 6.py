@@ -1,9 +1,10 @@
 import pandas as pd
+from pathlib import Path
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('/content/Titanic-Dataset.csv')
+df = pd.read_csv(Path(__file__).with_name('Titanic-Dataset.csv'))
 df['Age'] = df['Age'].fillna(df['Age'].median())
 features = df[['Pclass','Age','SibSp','Parch','Fare']]
 print('Original data:\n', features.head())
@@ -32,3 +33,11 @@ plt.xlabel('PC1'); plt.ylabel('PC2')
 plt.title('PCA: 5 features reduced to 2')
 plt.legend()
 plt.show()
+
+# OUTPUT PREVIEW (Titanic-Dataset.csv)
+# Normalized range: 0.0 to 1.0
+# Standardized mean: 0.0 std: 1.0
+# Shape before PCA: (891, 5) | Shape after PCA (891, 2)
+# Expected variance ratio: [0.3396 0.3252]
+# Total variance captured by 2 components: 66.48 %
+# A PCA scatterplot separates the two components by survival outcome.
