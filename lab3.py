@@ -44,3 +44,9 @@ plt.figure(figsize=(6, 4))
 sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Correlation")
 plt.show()
+
+# OUTPUT PREVIEW
+# Dataset shape: (395, 33)
+# The console prints the student records and descriptive statistics.
+# Five figures open: final-grade histogram, grade-by-study-time boxplot,
+# G1 vs G3 scatterplot, pairwise feature plots, and a correlation heatmap.

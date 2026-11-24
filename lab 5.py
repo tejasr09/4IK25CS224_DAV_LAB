@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-df=pd.read_csv("/content/student_performance_dataset.csv")
+from pathlib import Path
+
+df=pd.read_csv(Path(__file__).with_name("student_performance_dataset.csv"))
 print("First 5 rows of Dataset:")
 print(df.head())
 print("Statistical Summary:")
@@ -43,3 +45,9 @@ print(df_treated[num].describe())
 df_treated.to_csv("student_performance_dataset_treated.csv",index=False)
 print("Data saved to student_performance_dataset_treated.csv")
 print("Data saved successfully")
+
+# OUTPUT PREVIEW
+# First 5 rows and descriptive statistics are printed, followed by IQR and
+# Z-score outlier counts for the four score columns. Values are clipped to the
+# IQR limits; before/after summaries are printed and
+# student_performance_dataset_treated.csv is written.

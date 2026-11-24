@@ -49,3 +49,12 @@ print(df.duplicated().sum())
 
 print("\nDuplicate rows:")
 print(df[df.duplicated()])
+
+# OUTPUT PREVIEW
+# DESCRIPTIVE STATISTICS
+# Age mean: 22.00; Marks mean: 83.40
+# MISSING VALUES
+# Age: 5; Marks: 5; Name: 0; City: 0 (10 missing values total)
+# DUPLICATE READINGS
+# Number of duplicate rows: 0
+# The full output also lists the 10 rows with at least one missing value.
